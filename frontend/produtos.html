@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfumes — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<div class="topbar">Frete grátis para todo o Brasil em compras acima de R$ 350 · Compre com exclusividade</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-mobile-btn"><i class="fa-solid fa-bars"></i></button>
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <nav class="menu-principal">
+      <a href="/index.html">Início</a>
+      <a href="/produtos.html">Perfumes</a>
+      <a href="/produtos.html?genero=feminino">Femininos</a>
+      <a href="/produtos.html?genero=masculino">Masculinos</a>
+      <a href="/produtos.html?lancamento=true">Lançamentos</a>
+      <a href="/sobre.html">Sobre nós</a>
+    </nav>
+    <div class="header-acoes">
+      <form class="busca-form">
+        <input type="text" placeholder="Buscar perfume...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a href="/carrinho.html" class="icone-acao">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-carrinho">0</span>
+      </a>
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-mobile"></div>
+<div class="menu-mobile-painel">
+  <span class="fechar-menu-mobile"><i class="fa-solid fa-xmark"></i></span>
+  <nav>
+    <a href="/index.html">Início</a>
+    <a href="/produtos.html">Perfumes</a>
+    <a href="/produtos.html?genero=feminino">Femininos</a>
+    <a href="/produtos.html?genero=masculino">Masculinos</a>
+    <a href="/produtos.html?lancamento=true">Lançamentos</a>
+    <a href="/sobre.html">Sobre nós</a>
+  </nav>
+</div>
+
+<main>
+  <div class="catalogo-header">
+    <div class="container">
+      <span class="eyebrow">Catálogo completo</span>
+      <h1 id="tituloCatalogo">Nossos Perfumes</h1>
+      <p>Descubra fragrâncias que combinam com a sua personalidade</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="breadcrumb"><a href="/index.html">Início</a> / <span>Perfumes</span></div>
+
+    <div class="catalogo-layout">
+      <aside class="filtros-painel">
+        <div class="filtro-grupo">
+          <h4>Gênero</h4>
+          <label class="filtro-opcao"><input type="radio" name="genero" class="filtro-checkbox" value="feminino"> Feminino</label>
+          <label class="filtro-opcao"><input type="radio" name="genero" class="filtro-checkbox" value="masculino"> Masculino</label>
+          <label class="filtro-opcao"><input type="radio" name="genero" class="filtro-checkbox" value="unissex"> Unissex</label>
+        </div>
+
+        <div class="filtro-grupo">
+          <h4>Categoria</h4>
+          <div id="filtroCategorias"></div>
+        </div>
+
+        <!-- <div class="filtro-grupo">
+          <h4>Marca</h4>
+          <div id="filtroMarcas"></div>
+        </div> -->
+
+        <div class="filtro-grupo">
+          <h4>Faixa de preço</h4>
+          <div class="faixa-preco-inputs">
+            <input type="number" id="precoMin" placeholder="Mín.">
+            <span>—</span>
+            <input type="number" id="precoMax" placeholder="Máx.">
+          </div>
+          <button class="btn btn-outline-ouro btn-sm" style="margin-top:12px;" id="btnAplicarPreco">Aplicar</button>
+        </div>
+
+        <div class="filtro-grupo">
+          <label class="filtro-opcao">
+            <input type="checkbox" id="filtroLancamento" class="filtro-checkbox">
+            Somente lançamentos
+          </label>
+        </div>
+
+        <button class="btn btn-secundario btn-full" id="btnLimparFiltros">Limpar filtros</button>
+      </aside>
+
+      <div class="catalogo-conteudo">
+        <div class="catalogo-toolbar">
+          <span class="resultado-contagem" id="resultadoContagem">Carregando produtos...</span>
+          <select id="ordenarSelect">
+            <option value="mais_recentes">Mais recentes</option>
+            <option value="menor_preco">Menor preço</option>
+            <option value="maior_preco">Maior preço</option>
+            <option value="mais_vendidos">Mais vendidos</option>
+          </select>
+        </div>
+
+        <div class="catalogo-produtos" id="gridCatalogo">
+          <div class="loader"><div class="anel"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-logo">
+      <img src="/assets/logo.jpg" alt="Áurea Beauty">
+      <p>Perfumaria de luxo com curadoria exclusiva, entregando sofisticação em cada detalhe.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Institucional</h5>
+      <ul><li><a href="/sobre.html">Sobre nós</a></li><li><a href="/produtos.html">Catálogo</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Minha conta</h5>
+      <ul><li><a href="/login.html">Entrar</a></li><li><a href="/cadastro.html">Criar conta</a></li><li><a href="/carrinho.html">Carrinho</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <p><i class="fa-solid fa-envelope"></i> contato@aureabeauty.com</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/produtos.js"></script>
+</body>
+</html>

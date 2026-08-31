@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos — Painel Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<aside class="admin-sidebar">
+  <div class="logo-area">
+    <img src="../assets/logo.jpg" alt="Áurea Beauty">
+    <span>Áurea Admin</span>
+  </div>
+  <nav class="admin-nav">
+    <a href="/admin/dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+    <a href="/admin/produtos.html"><i class="fa-solid fa-flask"></i> Perfumes</a>
+    <a href="/admin/pedidos.html" class="ativo"><i class="fa-solid fa-box"></i> Pedidos</a>
+    <a href="/admin/usuarios.html"><i class="fa-solid fa-users"></i> Clientes</a>
+    <a href="/index.html"><i class="fa-solid fa-store"></i> Ver loja</a>
+  </nav>
+  <div class="admin-sidebar-rodape">
+    <button id="btnSairAdmin"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+  </div>
+</aside>
+
+<div class="admin-conteudo">
+  <div class="admin-topo">
+    <div>
+      <h1>Pedidos</h1>
+      <p>Acompanhe e atualize o status dos pedidos dos clientes</p>
+    </div>
+  </div>
+
+  <div class="admin-painel">
+    <div class="tabela-wrapper">
+      <table class="admin-tabela">
+        <thead>
+          <tr>
+            <th>Pedido</th>
+            <th>Cliente</th>
+            <th>Data</th>
+            <th>Itens</th>
+            <th>Total</th>
+            <th>Pagamento</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaPedidosBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

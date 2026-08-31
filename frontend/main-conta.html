@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Conta — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-mobile-btn"><i class="fa-solid fa-bars"></i></button>
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <nav class="menu-principal">
+      <a href="/index.html">Início</a>
+      <a href="/produtos.html">Perfumes</a>
+      <a href="/produtos.html?genero=feminino">Femininos</a>
+      <a href="/produtos.html?genero=masculino">Masculinos</a>
+      <a href="/produtos.html?lancamento=true">Lançamentos</a>
+      <a href="/sobre.html">Sobre nós</a>
+    </nav>
+    <div class="header-acoes">
+      <form class="busca-form">
+        <input type="text" placeholder="Buscar perfume...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a href="/carrinho.html" class="icone-acao">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-carrinho">0</span>
+      </a>
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-mobile"></div>
+<div class="menu-mobile-painel">
+  <span class="fechar-menu-mobile"><i class="fa-solid fa-xmark"></i></span>
+  <nav>
+    <a href="/index.html">Início</a>
+    <a href="/produtos.html">Perfumes</a>
+    <a href="/sobre.html">Sobre nós</a>
+  </nav>
+</div>
+
+<main id="contaContainer">
+  <div class="container">
+    <div class="breadcrumb"><a href="/index.html">Início</a> / <span>Minha conta</span></div>
+    <div class="secao-titulo" style="text-align:left;margin-bottom:10px;">
+      <h2>Olá, <span id="contaNomeTopo">Cliente</span></h2>
+    </div>
+
+    <div class="conta-layout">
+      <nav class="conta-menu">
+        <button data-painel="dados" class="ativo"><i class="fa-regular fa-id-card"></i> Dados pessoais</button>
+        <button data-painel="endereco"><i class="fa-solid fa-location-dot"></i> Endereços</button>
+        <button data-painel="senha"><i class="fa-solid fa-lock"></i> Alterar senha</button>
+        <button data-painel="pedidos"><i class="fa-solid fa-box"></i> Meus pedidos</button>
+        <button id="btnSairConta"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+      </nav>
+
+      <div class="conta-conteudo">
+
+        
+        <section class="conta-painel ativo" id="painel-dados">
+          <h2>Dados pessoais</h2>
+          <form id="formDadosConta" style="max-width:480px;">
+            <div class="campo">
+              <label for="inputNomeConta">Nome completo</label>
+              <input type="text" id="inputNomeConta" required>
+            </div>
+            <div class="campo">
+              <label for="inputEmailConta">E-mail</label>
+              <input type="email" id="inputEmailConta" disabled>
+            </div>
+            <div class="campo-linha-dupla">
+              <div class="campo">
+                <label for="inputTelefoneConta">Telefone</label>
+                <input type="tel" id="inputTelefoneConta">
+              </div>
+              <div class="campo">
+                <label for="inputCpfConta">CPF</label>
+                <input type="text" id="inputCpfConta">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primario">Salvar alterações</button>
+          </form>
+        </section>
+
+        
+        <section class="conta-painel" id="painel-endereco">
+          <h2>Meus endereços</h2>
+          <div id="listaEnderecosConta" style="margin-bottom:30px; max-width:560px;"></div>
+
+          <div class="divisor-titulo">Adicionar novo endereço</div>
+          <form id="formEnderecoConta" style="max-width:560px;">
+            <div class="campo-linha-dupla">
+              <div class="campo"><label for="novoCep">CEP</label><input type="text" id="novoCep" required></div>
+              <div class="campo"><label for="novoNumero">Número</label><input type="text" id="novoNumero" required></div>
+            </div>
+            <div class="campo"><label for="novoLogradouro">Rua / Avenida</label><input type="text" id="novoLogradouro" required></div>
+            <div class="campo"><label for="novoComplemento">Complemento</label><input type="text" id="novoComplemento"></div>
+            <div class="campo-linha-dupla">
+              <div class="campo"><label for="novoBairro">Bairro</label><input type="text" id="novoBairro" required></div>
+              <div class="campo"><label for="novoCidade">Cidade</label><input type="text" id="novoCidade" required></div>
+            </div>
+            <div class="campo"><label for="novoEstado">Estado (UF)</label><input type="text" id="novoEstado" maxlength="2" required></div>
+            <button type="submit" class="btn btn-primario">Salvar endereço</button>
+          </form>
+        </section>
+
+        
+        <section class="conta-painel" id="painel-senha">
+          <h2>Alterar senha</h2>
+          <form id="formSenhaConta" style="max-width:480px;">
+            <div class="campo">
+              <label for="inputSenhaAtual">Senha atual</label>
+              <input type="password" id="inputSenhaAtual" required>
+            </div>
+            <div class="campo">
+              <label for="inputNovaSenha">Nova senha</label>
+              <input type="password" id="inputNovaSenha" required>
+            </div>
+            <div class="campo">
+              <label for="inputConfirmarNovaSenha">Confirmar nova senha</label>
+              <input type="password" id="inputConfirmarNovaSenha" required>
+            </div>
+            <button type="submit" class="btn btn-primario">Alterar senha</button>
+          </form>
+        </section>
+
+        
+        <section class="conta-painel" id="painel-pedidos">
+          <h2>Meus pedidos</h2>
+          <div id="listaPedidosConta"></div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom" style="border-top:1px solid var(--cinza-borda); justify-content:center;">
+    <span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/conta.js"></script>
+</body>
+</html>

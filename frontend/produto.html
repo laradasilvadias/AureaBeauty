@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes do Perfume — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<div class="topbar">Frete grátis para todo o Brasil em compras acima de R$ 350 · Compre com exclusividade</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-mobile-btn"><i class="fa-solid fa-bars"></i></button>
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <nav class="menu-principal">
+      <a href="/index.html">Início</a>
+      <a href="/produtos.html">Perfumes</a>
+      <a href="/produtos.html?genero=feminino">Femininos</a>
+      <a href="/produtos.html?genero=masculino">Masculinos</a>
+      <a href="/produtos.html?lancamento=true">Lançamentos</a>
+      <a href="/sobre.html">Sobre nós</a>
+    </nav>
+    <div class="header-acoes">
+      <form class="busca-form">
+        <input type="text" placeholder="Buscar perfume...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a href="/carrinho.html" class="icone-acao">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-carrinho">0</span>
+      </a>
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-mobile"></div>
+<div class="menu-mobile-painel">
+  <span class="fechar-menu-mobile"><i class="fa-solid fa-xmark"></i></span>
+  <nav>
+    <a href="/index.html">Início</a>
+    <a href="/produtos.html">Perfumes</a>
+    <a href="/sobre.html">Sobre nós</a>
+  </nav>
+</div>
+
+<main>
+  <div class="container">
+    <div class="breadcrumb"><a href="/index.html">Início</a> / <a href="/produtos.html">Perfumes</a> / <span id="breadcrumbNome">Detalhes</span></div>
+
+    <div id="produtoDetalheContainer" class="produto-detalhe">
+      <div class="produto-detalhe-imagem">
+        <img id="produtoImagem" src="" alt="">
+      </div>
+
+      <div class="produto-detalhe-info">
+        <div class="produto-marca" id="produtoMarca"></div>
+        <h1 id="produtoNome"></h1>
+
+        <div class="produto-meta-linha">
+          <span>Categoria: <strong id="produtoCategoria"></strong></span>
+          <span>Volume: <strong id="produtoVolume"></strong></span>
+          <span>Gênero: <strong id="produtoGenero"></strong></span>
+        </div>
+
+        <div class="produto-detalhe-preco">
+          <span class="preco-antigo" id="precoAntigo"></span>
+          <span class="preco-atual" id="precoAtual"></span>
+        </div>
+
+        <div id="produtoDisponibilidade" class="produto-disponibilidade"></div>
+
+        <p class="produto-descricao-completa" id="produtoDescricao"></p>
+
+        <div class="produto-acoes-linha">
+          <div class="quantidade-seletor">
+            <button type="button" id="btnDiminuirQtd">−</button>
+            <input type="number" id="inputQuantidade" value="1" min="1" readonly>
+            <button type="button" id="btnAumentarQtd">+</button>
+          </div>
+          <button class="btn btn-primario" id="btnAdicionarCarrinho">
+            <i class="fa-solid fa-bag-shopping"></i> Adicionar ao carrinho
+          </button>
+        </div>
+
+        <div class="produto-tabs">
+          <h4>Por que você vai amar</h4>
+          <ul>
+            <li>Fragrância de alta fixação e projeção</li>
+            <li>Frasco premium, ideal para presentear</li>
+            <li>Produto 100% original e lacrado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="secao" id="secaoRelacionados">
+      <div class="secao-titulo">
+        <span class="eyebrow">Você também pode gostar</span>
+        <h2>Produtos relacionados</h2>
+        <div class="divisor-fino"></div>
+      </div>
+      <div class="produtos-grid" id="gridRelacionados"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-logo">
+      <img src="/assets/logo.jpg" alt="Áurea Beauty">
+      <p>Perfumaria de luxo com curadoria exclusiva, entregando sofisticação em cada detalhe.</p>
+    </div>
+    <div class="footer-col"><h5>Institucional</h5><ul><li><a href="/sobre.html">Sobre nós</a></li><li><a href="/produtos.html">Catálogo</a></li></ul></div>
+    <div class="footer-col"><h5>Minha conta</h5><ul><li><a href="/login.html">Entrar</a></li><li><a href="/carrinho.html">Carrinho</a></li></ul></div>
+    <div class="footer-col"><h5>Contato</h5><p><i class="fa-solid fa-envelope"></i> contato@aureabeauty.com</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span></div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/produtos.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Nós — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-mobile-btn"><i class="fa-solid fa-bars"></i></button>
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <nav class="menu-principal">
+      <a href="/index.html">Início</a>
+      <a href="/produtos.html">Perfumes</a>
+      <a href="/produtos.html?genero=feminino">Femininos</a>
+      <a href="/produtos.html?genero=masculino">Masculinos</a>
+      <a href="/produtos.html?lancamento=true">Lançamentos</a>
+      <a href="/sobre.html" class="ativo">Sobre nós</a>
+    </nav>
+    <div class="header-acoes">
+      <form class="busca-form">
+        <input type="text" placeholder="Buscar perfume...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a href="/carrinho.html" class="icone-acao">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-carrinho">0</span>
+      </a>
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-mobile"></div>
+<div class="menu-mobile-painel">
+  <span class="fechar-menu-mobile"><i class="fa-solid fa-xmark"></i></span>
+  <nav>
+    <a href="/index.html">Início</a>
+    <a href="/produtos.html">Perfumes</a>
+    <a href="/sobre.html">Sobre nós</a>
+  </nav>
+</div>
+
+<main>
+  <div class="pagina-hero-simples">
+    <span class="eyebrow">Nossa história</span>
+    <h1>Sobre a Áurea Beauty</h1>
+  </div>
+
+  <section class="secao">
+    <div class="container sobre-grid">
+      <div class="sobre-imagem">
+        <img src="/assets/logo.jpg" alt="Áurea Beauty" style="filter:brightness(0) invert(1);width:60%;">
+      </div>
+      <div class="sobre-texto">
+        <span class="eyebrow">Quem somos</span>
+        <h2>Perfumaria pensada para quem valoriza a exclusividade</h2>
+        <p>A Áurea Beauty nasceu do desejo de aproximar perfumes de luxo de pessoas que valorizam experiências sensoriais únicas. Acreditamos que um perfume vai muito além do cheiro: ele carrega memórias, personalidade e presença.</p>
+        <p>Trabalhamos com marcas nacionais e internacionais cuidadosamente selecionadas, garantindo autenticidade em cada frasco. Nosso compromisso é oferecer uma jornada de compra tão sofisticada quanto os produtos que vendemos.</p>
+        <div class="sobre-valores">
+          <div class="valor-item">
+            <h4>Missão</h4>
+            <p>Democratizar o acesso a fragrâncias sofisticadas com atendimento de excelência.</p>
+          </div>
+          <div class="valor-item">
+            <h4>Visão</h4>
+            <p>Ser referência em perfumaria de luxo no e-commerce brasileiro.</p>
+          </div>
+          <div class="valor-item">
+            <h4>Valores</h4>
+            <p>Autenticidade, elegância, cuidado com o cliente e exclusividade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa-selos">
+    <div class="container selos-inner">
+      <div class="selo-item"><i class="fa-solid fa-truck-fast"></i> Entrega para todo o Brasil</div>
+      <div class="selo-item"><i class="fa-solid fa-certificate"></i> Produtos 100% originais</div>
+      <div class="selo-item"><i class="fa-solid fa-lock"></i> Pagamento seguro</div>
+      <div class="selo-item"><i class="fa-solid fa-gift"></i> Embalagem para presente</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-logo">
+      <img src="/assets/logo.jpg" alt="Áurea Beauty">
+      <p>Perfumaria de luxo com curadoria exclusiva, entregando sofisticação em cada detalhe.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Institucional</h5><ul><li><a href="/sobre.html">Sobre nós</a></li><li><a href="/produtos.html">Catálogo</a></li></ul></div>
+    <div class="footer-col"><h5>Minha conta</h5><ul><li><a href="/login.html">Entrar</a></li><li><a href="/cadastro.html">Criar conta</a></li></ul></div>
+    <div class="footer-col"><h5>Contato</h5><p><i class="fa-solid fa-envelope"></i> contato@aureabeauty.com</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span></div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

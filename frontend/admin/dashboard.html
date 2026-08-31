@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Painel Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<aside class="admin-sidebar">
+  <div class="logo-area">
+    <img src= alt="Áurea Beauty">
+    <span>Áurea Admin</span>
+  </div>
+  <nav class="admin-nav">
+    <a href="/admin/dashboard.html" class="ativo"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+    <a href="/admin/produtos.html"><i class="fa-solid fa-flask"></i> Perfumes</a>
+    <a href="/admin/pedidos.html"><i class="fa-solid fa-box"></i> Pedidos</a>
+    <a href="/admin/usuarios.html"><i class="fa-solid fa-users"></i> Clientes</a>
+    <a href="/index.html"><i class="fa-solid fa-store"></i> Ver loja</a>
+  </nav>
+  <div class="admin-sidebar-rodape">
+    <button id="btnSairAdmin"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+  </div>
+</aside>
+
+<div class="admin-conteudo" id="dashboardContainer">
+  <div class="admin-topo">
+    <button id="btnAbrirSidebar" style="display:none;"><i class="fa-solid fa-bars"></i></button>
+    <div>
+      <h1>Dashboard</h1>
+      <p>Visão geral da loja Áurea Beauty</p>
+    </div>
+    <div class="admin-usuario-chip">
+      <div class="avatar" id="adminAvatarInicial">A</div>
+      <span id="adminUsuarioNome">Administrador</span>
+    </div>
+  </div>
+
+  <div class="admin-stats-grid">
+    <div class="admin-stat-card">
+      <div class="icone"><i class="fa-solid fa-flask"></i></div>
+      <div><div class="valor" id="statTotalProdutos">—</div><div class="rotulo">Perfumes cadastrados</div></div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="icone"><i class="fa-solid fa-users"></i></div>
+      <div><div class="valor" id="statTotalClientes">—</div><div class="rotulo">Clientes</div></div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="icone"><i class="fa-solid fa-box"></i></div>
+      <div><div class="valor" id="statTotalPedidos">—</div><div class="rotulo">Pedidos</div></div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="icone"><i class="fa-solid fa-sack-dollar"></i></div>
+      <div><div class="valor" id="statValorVendas">—</div><div class="rotulo">Total em vendas</div></div>
+    </div>
+  </div>
+
+  <div class="admin-painel-grid-2">
+    <div class="admin-painel">
+      <div class="admin-painel-titulo"><h3>Pedidos recentes</h3></div>
+      <div id="listaPedidosRecentes"></div>
+    </div>
+    <div class="admin-painel">
+      <div class="admin-painel-titulo"><h3>Estoque baixo</h3></div>
+      <div id="listaEstoqueBaixo"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

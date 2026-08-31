@@ -1,0 +1,29 @@
+// Configuração da conexão com o banco de dados MySQL
+require('dotenv').config();
+const mysql = require('mysql2/promise');
+
+const pool = mysql.createPool({
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'aurea_beauty',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  dateStrings: true
+});
+
+// Testa a conexão ao iniciar o servidor
+async function testarConexao() {
+  try {
+    const conn = await pool.getConnection();
+    console.log('✅ Conectado ao banco de dados MySQL:', process.env.DB_NAME);
+    conn.release();
+  } catch (err) {
+    console.error('❌ Erro ao conectar ao banco de dados:', err.message);
+    console.error('   Verifique se o MySQL está rodando e se o arquivo .env está configurado corretamente.');
+  }
+}
+
+module.exports = { pool, testarConexao };

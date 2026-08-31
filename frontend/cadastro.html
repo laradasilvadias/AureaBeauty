@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Conta — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner" style="justify-content:center;">
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+  </div>
+</header>
+
+<main class="pagina-form larga">
+  <div class="form-card">
+    <span class="eyebrow" style="display:block;text-align:center;">Junte-se à Áurea Beauty</span>
+    <h1>Criar conta</h1>
+    <p class="subtitulo">Preencha seus dados para começar a comprar com exclusividade</p>
+
+    <form id="formCadastro" novalidate>
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" required placeholder="Seu nome completo">
+        <span class="campo-erro"></span>
+      </div>
+
+      <div class="campo-linha-dupla">
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+          <span class="campo-erro"></span>
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+        </div>
+      </div>
+
+      <div class="campo-linha-dupla">
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" required placeholder="Mínimo 6 caracteres">
+          <span class="campo-erro"></span>
+        </div>
+        <div class="campo">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input type="password" id="confirmarSenha" required placeholder="Repita a senha">
+          <span class="campo-erro"></span>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="cpf">CPF (opcional)</label>
+        <input type="text" id="cpf" placeholder="000.000.000-00">
+      </div>
+
+      <div class="divisor-titulo">Endereço de entrega (opcional)</div>
+
+      <div class="campo-linha-dupla">
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input type="text" id="cep" placeholder="00000-000">
+        </div>
+        <div class="campo">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" placeholder="123">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="logradouro">Rua / Avenida</label>
+        <input type="text" id="logradouro" placeholder="Nome da rua">
+      </div>
+
+      <div class="campo">
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" placeholder="Apto, bloco, etc. (opcional)">
+      </div>
+
+      <div class="campo-linha-dupla">
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" placeholder="Bairro">
+        </div>
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" placeholder="Cidade">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="estado">Estado (UF)</label>
+        <input type="text" id="estado" maxlength="2" placeholder="SP">
+      </div>
+
+      <button type="submit" class="btn btn-primario btn-full">Criar conta</button>
+    </form>
+
+    <p class="form-rodape-link">Já tem conta? <a href="/login.html">Entrar</a></p>
+    <p class="form-rodape-link"><a href="/index.html"><i class="fa-solid fa-arrow-left"></i> Voltar à loja</a></p>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-top:24px;">
+  <div class="container footer-bottom" style="border-top:none;justify-content:center;">
+    <span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

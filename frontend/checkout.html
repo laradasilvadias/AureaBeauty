@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar Compra — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner" style="justify-content:space-between;">
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <div class="header-acoes">
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<main id="checkoutContainer">
+  <div class="container">
+    <div class="breadcrumb"><a href="/index.html">Início</a> / <a href="/carrinho.html">Carrinho</a> / <span>Checkout</span></div>
+    <div class="secao-titulo" style="text-align:left;margin-bottom:20px;">
+      <h2>Finalizar compra</h2>
+    </div>
+
+    <form id="formCheckout">
+      <div class="checkout-layout">
+        <div>
+          <div class="checkout-etapa">
+            <h3><span class="num">1</span> Endereço de entrega</h3>
+            <div id="listaEnderecos"></div>
+          </div>
+
+          <div class="checkout-etapa">
+            <h3><span class="num">2</span> Forma de pagamento</h3>
+            <div class="pagamento-opcoes">
+              <label class="pagamento-opcao selecionada">
+                <input type="radio" name="pagamento" value="pix" checked style="display:none">
+                <i class="fa-brands fa-pix"></i>
+                <span>Pix</span>
+              </label>
+              <label class="pagamento-opcao">
+                <input type="radio" name="pagamento" value="cartao" style="display:none">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Cartão de crédito</span>
+              </label>
+              <label class="pagamento-opcao">
+                <input type="radio" name="pagamento" value="boleto" style="display:none">
+                <i class="fa-solid fa-barcode"></i>
+                <span>Boleto</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <aside class="carrinho-resumo">
+          <h3>Resumo do pedido</h3>
+          <div id="checkoutResumoItens"></div>
+          <div class="resumo-linha total">
+            <span>Total</span>
+            <span id="checkoutTotal">R$ 0,00</span>
+          </div>
+          <button type="submit" class="btn btn-primario btn-full" id="btnFinalizarPedido" style="margin-top:20px;">
+            Confirmar pedido
+          </button>
+          <a href="/carrinho.html" class="btn btn-secundario btn-full" style="margin-top:12px;">
+            Voltar ao carrinho
+          </a>
+        </aside>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-top:24px;">
+  <div class="container footer-bottom" style="border-top:none;justify-content:center;">
+    <span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/carrinho.js"></script>
+</body>
+</html>

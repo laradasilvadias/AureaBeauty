@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfumes — Painel Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<aside class="admin-sidebar">
+  <div class="logo-area">
+    <img src="../assets/logo.jpg" alt="Áurea Beauty">
+    <span>Áurea Admin</span>
+  </div>
+  <nav class="admin-nav">
+    <a href="/admin/dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+    <a href="/admin/produtos.html" class="ativo"><i class="fa-solid fa-flask"></i> Perfumes</a>
+    <a href="/admin/pedidos.html"><i class="fa-solid fa-box"></i> Pedidos</a>
+    <a href="/admin/usuarios.html"><i class="fa-solid fa-users"></i> Clientes</a>
+    <a href="/index.html"><i class="fa-solid fa-store"></i> Ver loja</a>
+  </nav>
+  <div class="admin-sidebar-rodape">
+    <button id="btnSairAdmin"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+  </div>
+</aside>
+
+<div class="admin-conteudo" id="produtosAdminContainer">
+  <div class="admin-topo">
+    <div>
+      <h1>Perfumes</h1>
+      <p>Cadastre, edite e gerencie os perfumes da loja</p>
+    </div>
+    <button class="btn btn-primario" id="btnNovoProduto"><i class="fa-solid fa-plus"></i> Novo perfume</button>
+  </div>
+
+  <div class="admin-painel">
+    <div class="tabela-wrapper">
+      <table class="admin-tabela">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Destaque</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaProdutosBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de cadastro/edição de produto -->
+<div class="admin-modal-overlay" id="modalProdutoOverlay">
+  <div class="admin-modal">
+    <div class="admin-modal-topo">
+      <h3 id="modalProdutoTitulo">Cadastrar novo perfume</h3>
+      <button id="btnFecharModalProduto"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <form id="formProduto">
+      <input type="hidden" id="produtoIdEdicao">
+
+      <div class="campo">
+        <div class="upload-imagem-area" onclick="document.getElementById('inputImagemProduto').click()">
+          <img id="previewImagemProduto" class="upload-imagem-preview" style="display:none;">
+          <i class="fa-solid fa-image"></i> Clique para enviar uma imagem do perfume
+        </div>
+        <input type="file" id="inputImagemProduto" accept="image/*" style="display:none;">
+      </div>
+
+      <div class="admin-form-grid">
+        <div class="campo campo-full">
+          <label for="inputNomeProduto">Nome do perfume</label>
+          <input type="text" id="inputNomeProduto" required>
+        </div>
+
+        <div class="campo">
+          <label for="inputMarcaProduto">Marca</label>
+          <input type="text" id="inputMarcaProduto" required>
+        </div>
+        <div class="campo">
+          <label for="selectCategoriaProduto">Categoria</label>
+          <select id="selectCategoriaProduto"></select>
+        </div>
+
+        <div class="campo">
+          <label for="selectGeneroProduto">Gênero</label>
+          <select id="selectGeneroProduto">
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="unissex">Unissex</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="inputVolumeProduto">Volume (ml)</label>
+          <input type="number" id="inputVolumeProduto" required min="1">
+        </div>
+
+        <div class="campo campo-full">
+          <label for="inputDescricaoProduto">Descrição</label>
+          <textarea id="inputDescricaoProduto" rows="3"></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="inputPrecoProduto">Preço (R$)</label>
+          <input type="number" id="inputPrecoProduto" step="0.01" required min="0.01">
+        </div>
+        <div class="campo">
+          <label for="inputPrecoPromoProduto">Preço promocional (R$)</label>
+          <input type="number" id="inputPrecoPromoProduto" step="0.01" min="0">
+        </div>
+
+        <div class="campo">
+          <label for="inputEstoqueProduto">Quantidade em estoque</label>
+          <input type="number" id="inputEstoqueProduto" required min="0">
+        </div>
+
+        <div class="campo" style="display:flex; flex-direction:column; justify-content:center; gap:10px;">
+          <label class="checkbox-linha"><input type="checkbox" id="checkDestaqueProduto"> Produto em destaque</label>
+          <label class="checkbox-linha"><input type="checkbox" id="checkLancamentoProduto"> Produto em lançamento</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primario btn-full" id="btnSalvarProduto" style="margin-top:20px;">
+        Salvar perfume
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

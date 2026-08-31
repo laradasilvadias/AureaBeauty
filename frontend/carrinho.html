@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho — Áurea Beauty</title>
+<link rel="icon" href="/assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-mobile-btn"><i class="fa-solid fa-bars"></i></button>
+    <a href="/index.html" class="logo-link"><img src="/assets/logo.jpg" alt="Áurea Beauty"></a>
+    <nav class="menu-principal">
+      <a href="/index.html">Início</a>
+      <a href="/produtos.html">Perfumes</a>
+      <a href="/produtos.html?genero=feminino">Femininos</a>
+      <a href="/produtos.html?genero=masculino">Masculinos</a>
+      <a href="/produtos.html?lancamento=true">Lançamentos</a>
+      <a href="/sobre.html">Sobre nós</a>
+    </nav>
+    <div class="header-acoes">
+      <form class="busca-form">
+        <input type="text" placeholder="Buscar perfume...">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a href="/carrinho.html" class="icone-acao ativo">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-carrinho">0</span>
+      </a>
+      <div class="conta-area"></div>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-mobile"></div>
+<div class="menu-mobile-painel">
+  <span class="fechar-menu-mobile"><i class="fa-solid fa-xmark"></i></span>
+  <nav>
+    <a href="/index.html">Início</a>
+    <a href="/produtos.html">Perfumes</a>
+    <a href="/sobre.html">Sobre nós</a>
+  </nav>
+</div>
+
+<main>
+  <div class="container">
+    <div class="breadcrumb"><a href="/index.html">Início</a> / <span>Carrinho</span></div>
+    <div class="secao-titulo" style="text-align:left;margin-bottom:20px;">
+      <h2>Seu carrinho</h2>
+    </div>
+
+    <div class="carrinho-layout">
+      <div id="carrinhoLista"></div>
+
+      <aside class="carrinho-resumo" id="carrinhoResumo">
+        <h3>Resumo do pedido</h3>
+        <div class="resumo-linha">
+          <span id="resumoItens">0 itens</span>
+          <span id="resumoSubtotal">R$ 0,00</span>
+        </div>
+        <div class="resumo-linha total">
+          <span>Total</span>
+          <span id="resumoTotal">R$ 0,00</span>
+        </div>
+        <a href="/checkout.html" class="btn btn-primario btn-full" style="margin-top:20px;">
+          Finalizar pedido <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="/produtos.html" class="btn btn-secundario btn-full" style="margin-top:12px;">
+          Continuar comprando
+        </a>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-logo">
+      <img src="/assets/logo.jpg" alt="Áurea Beauty">
+      <p>Perfumaria de luxo com curadoria exclusiva.</p>
+    </div>
+    <div class="footer-col"><h5>Institucional</h5><ul><li><a href="/sobre.html">Sobre nós</a></li></ul></div>
+    <div class="footer-col"><h5>Minha conta</h5><ul><li><a href="/login.html">Entrar</a></li></ul></div>
+    <div class="footer-col"><h5>Contato</h5><p><i class="fa-solid fa-envelope"></i> contato@aureabeauty.com</p></div>
+  </div>
+  <div class="container footer-bottom"><span>© <span id="ano-atual"></span> Áurea Beauty. Todos os direitos reservados.</span></div>
+</footer>
+
+<script src="/js/app.js"></script>
+<script src="/js/carrinho.js"></script>
+</body>
+</html>
