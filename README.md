@@ -256,4 +256,4 @@ aurea-beauty/
 
 ## 👩‍💻 Autoria
 
-Projeto desenvolvido como trabalho acadêmico — Áurea Beauty © 2026.
+Projeto desenvolvido como trabalho acadêmico por Camilly Felipe dos santos e Lara da Silva Dias — Áurea Beauty © 2026.
