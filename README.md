@@ -48,31 +48,6 @@ Na raiz do projeto, execute:
 npm install
 ```
 
-### 2. Configurar o arquivo `.env`
-
-Copie o arquivo de exemplo:
-
-```bash
-cp .env.example .env
-```
-
-Abra o `.env` e ajuste os valores conforme o seu ambiente MySQL:
-
-```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=XXXXXXX
-DB_NAME=aurea_beauty
-
-PORT=3000
-
-JWT_SECRET=troque_esta_chave_por_uma_bem_forte_e_aleatoria
-JWT_EXPIRES_IN=7d
-```
-
-> ⚠️ **Importante:** nunca use o arquivo `.env` real em repositórios públicos. Ele já está listado no `.gitignore`.
-
 ### 3. Criar o banco de dados
 
 Com o MySQL em execução, rode o script de criação das tabelas:
@@ -107,7 +82,7 @@ Para rodar em modo desenvolvimento (reinício automático a cada alteração, re
 npm run dev
 ```
 
-O servidor iniciará em `http://localhost:3000` (ou na porta definida em `PORT` no `.env`).
+O servidor iniciará em `http://localhost:3000`.
 
 ### 6. Acessar o frontend
 
