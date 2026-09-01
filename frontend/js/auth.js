@@ -1,7 +1,4 @@
-/* ============================================================
-   ÁUREA BEAUTY — auth.js
-   Lógica das páginas de login e cadastro
-   ============================================================ */
+
 
 function exibirErroCampo(inputId, mensagem) {
   const campo = document.getElementById(inputId).closest('.campo');
@@ -14,7 +11,7 @@ function limparErrosCampos(form) {
   form.querySelectorAll('.campo').forEach(c => c.classList.remove('invalido'));
 }
 
-/* ---------------- Formulário de Login ---------------- */
+/* ---------------- Formulário de Login */
 function iniciarFormularioLogin() {
   const form = document.getElementById('formLogin');
   if (!form) return;
@@ -52,7 +49,7 @@ function iniciarFormularioLogin() {
   });
 }
 
-/* ---------------- Formulário de Cadastro ---------------- */
+/* ---------------- Formulário de Cadastro */
 function iniciarFormularioCadastro() {
   const form = document.getElementById('formCadastro');
   if (!form) return;
@@ -110,7 +107,7 @@ function iniciarFormularioCadastro() {
   });
 }
 
-/* ---------------- Proteção de rotas do cliente ---------------- */
+/* ---------------- Proteção de rotas do cliente */
 function exigirLogin() {
   if (!getUsuarioLogado()) {
     window.location.href = '/login.html';

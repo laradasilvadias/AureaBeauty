@@ -197,7 +197,7 @@ function iniciarMenuMobile() {
   if (fechar) fechar.addEventListener('click', fecharMenu);
 }
 
-/* ---------------- Busca no header ---------------- */
+/* --------- Busca no header */
 function iniciarBuscaHeader() {
   const form = document.querySelector('.busca-form');
   if (!form) return;
@@ -208,7 +208,6 @@ function iniciarBuscaHeader() {
   });
 }
 
-/* ---------------- Marca o link ativo do menu ---------------- */
 function marcarMenuAtivo() {
   const caminho = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav.menu-principal a, .menu-mobile-painel nav a').forEach(link => {
@@ -217,7 +216,7 @@ function marcarMenuAtivo() {
   });
 }
 
-/* ---------------- Inicialização comum a todas as páginas do site ---------------- */
+
 document.addEventListener('DOMContentLoaded', () => {
   montarAreaConta();
   atualizarBadgeCarrinho();

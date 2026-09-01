@@ -1,7 +1,4 @@
-/* ============================================================
-   ÁUREA BEAUTY — conta.js
-   Área do cliente: dados pessoais, endereço, senha, pedidos
-   ============================================================ */
+
 
 async function iniciarMinhaConta() {
   const container = document.getElementById('contaContainer');

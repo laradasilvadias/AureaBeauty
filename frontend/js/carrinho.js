@@ -1,9 +1,6 @@
-/* ============================================================
-   ÁUREA BEAUTY — carrinho.js
-   Página de carrinho e checkout
-   ============================================================ */
 
-/* ---------------- Página: carrinho.html ---------------- */
+
+/* ---------------- Página: carrinho.html */
 function renderizarCarrinho() {
   const listaEl = document.getElementById('carrinhoLista');
   if (!listaEl) return;

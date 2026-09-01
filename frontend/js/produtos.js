@@ -1,7 +1,4 @@
-/* ============================================================
-   ÁUREA BEAUTY — produtos.js
-   Renderização de produtos: home, catálogo e detalhes
-   ============================================================ */
+
 
 /* ---------------- Template de card de produto ---------------- */
 function criarCardProduto(produto) {
