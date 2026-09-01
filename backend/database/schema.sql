@@ -6,9 +6,7 @@ CREATE DATABASE IF NOT EXISTS aurea_beauty
 
 USE aurea_beauty;
 
--- ------------------------------------------------------------
 -- Tabela: usuarios
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(150) NOT NULL,
@@ -21,9 +19,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
   criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
 -- Tabela: enderecos
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS enderecos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -38,18 +34,14 @@ CREATE TABLE IF NOT EXISTS enderecos (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
 -- Tabela: categorias
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS categorias (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(80) NOT NULL UNIQUE,
   slug VARCHAR(80) NOT NULL UNIQUE
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
 -- Tabela: produtos
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS produtos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(150) NOT NULL,
@@ -70,9 +62,7 @@ CREATE TABLE IF NOT EXISTS produtos (
   FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
 -- Tabela: pedidos
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS pedidos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -92,9 +82,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
   FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
 -- Tabela: itens_pedido
--- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS itens_pedido (
   id INT AUTO_INCREMENT PRIMARY KEY,
   pedido_id INT NOT NULL,
